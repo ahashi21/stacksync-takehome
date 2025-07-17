@@ -4,7 +4,7 @@ A secure API service for executing Python scripts with built-in safety measures 
 
 ## Overview
 
-This service accepts Python scripts via HTTP POST requests and executes them in a controlled environment. All scripts must contain a `main()` function that returns JSON-serializable data.
+This service accepts Python scripts via HTTP POST requests and executes them in a controlled environment. All scripts must contain a `main()` function that returns JSON-serializable data. Took about 2 hours to complete using Codespaces virtual environment.
 
 Note: While this implementation was originally designed to use nsjail for sandboxing, Google Cloud Run’s security model prohibits the privileged syscalls and namespace operations required by nsjail. As a fallback, the service applies a combination of AST-based script validation, process-level isolation, and resource limits to ensure safe execution of untrusted Python code when nsjail is unavailable.
 
