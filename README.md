@@ -84,3 +84,19 @@ def main():
     df = pd.DataFrame({"x": [1, 2, 3]})
     return {"mean": df["x"].mean()}
 ```
+
+## Live Demo
+
+**Service URL**: https://stacksync-takehome-776290719985.northamerica-northeast2.run.app
+
+Test the health endpoint:
+```bash
+curl https://stacksync-takehome-776290719985.northamerica-northeast2.run.app/health
+```
+
+Execute a Python script:
+```bash
+curl -X POST https://stacksync-takehome-776290719985.northamerica-northeast2.run.app/execute \
+  -H "Content-Type: application/json" \
+  -d '{"script": "def main():\n    import pandas as pd\n    df = pd.DataFrame({\"x\": [1, 2, 3]})\n    print(\"Hello from Cloud Run!\")\n    return {\"mean\": float(df[\"x\"].mean())}"}'
+```
