@@ -10,7 +10,7 @@ RUN useradd -r -s /bin/false -u 1001 appuser
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py executor.py .
+COPY app.py executor.py ./
 
 USER appuser
 
